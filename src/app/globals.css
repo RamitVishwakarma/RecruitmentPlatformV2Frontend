@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-color: #FAFAFA;
+  --form-background: #FFFFFF;
+  --border-color: #818181;
+  --button-primary: #635BFF;
+  --border-gray: #808080;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
@@ -18,4 +22,88 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+  @layer components {
+  .main-container {
+  width: 1440px;
+  height: 1024px;
+  margin: 0 auto;
+  padding: 100px;
+  background-color: var(--background-color);
+  }
+  .form-base {
+  width: 630px;
+  background-color: var(--form-background);
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+  position: relative;
+  top: 215px;
+  left: 405px;
+  box-shadow: 7px 10px 33.7px  -5px #0D447A08;
+  min-height: 500px;
+  padding: 2rem;
+  }
+
+  .form-element {
+    width: 518px;
+    height: 64px;
+    border:  1px solid #80808066;
+    border-radius: 6px;
+    padding: 14px;
+  }
+ 
+  .continue-button {
+    @apply form-element;
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 161px;
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  .continue-button:hover {
+    opacity: 0.95;
+  }
+
+  .continue-button:focus {
+    outline: 2px solid var(--button-primary);
+    outline-offset: 2px;
+  }
+  .auth-button {
+    @apply form-element;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .auth-button:hover {
+    background-color: #f7f7f7;
+  }
+  .input-field {
+    @apply form-element;
+    margin-bottom: 16px;
+    
+  }
+  .input-field{
+    outline: none;
+  }
 }
