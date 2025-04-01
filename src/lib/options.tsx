@@ -18,7 +18,7 @@ export const navItems: NavItem[] = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/dashboard', label: 'Dashboard', icon: LayoutGrid },
   { href: 'https://www.gdscjss.in/', label: 'Website', icon: Globe },
-  { href: '/results', label: 'Results', icon: Medal },
+  { href: '#', label: 'Results', icon: Medal },
 ];
 
 export const socials = [
