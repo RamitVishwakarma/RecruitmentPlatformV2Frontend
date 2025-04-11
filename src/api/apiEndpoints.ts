@@ -32,7 +32,7 @@ export const apiEndPoints = {
   },
 
   oauth: {
-    googleAuth: '/auth/google', //used
+    googleAuth: 'auth/google', //used
     loginSuccess: '/auth/login', //used
   },
 
