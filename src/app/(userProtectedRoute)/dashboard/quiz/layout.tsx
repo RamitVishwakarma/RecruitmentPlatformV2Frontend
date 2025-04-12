@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
 import type { ReactNode } from 'react';
 
-const DEADLINE = new Date('2025-04-12T13:00:00');
+const DEADLINE = new Date('2025-04-13T00:00:00');
 
 export const metadata = {
   title: 'Quiz | GDG',
