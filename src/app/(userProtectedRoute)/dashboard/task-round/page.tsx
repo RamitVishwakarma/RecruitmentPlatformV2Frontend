@@ -10,6 +10,7 @@ import { apiEndPoints } from '@/api/apiEndpoints';
 import { Spinner } from '@/components/common/spinner';
 import { Button } from '@/components/ui/button';
 import { statusCode } from '@/constants/apiStatus';
+import { steps } from '@/constants/dashboard';
 import { handleToastApiResponse } from '@/lib/helpers';
 import useUserStore from '@/stores/userStore';
 import { AndroidTask } from './android-task';
@@ -25,7 +26,7 @@ const taskSchema = z.object({
 export default function Task() {
   const router = useRouter();
   const { user } = useUserStore();
-  const deadline = new Date('2025-04-16T12:59:59');
+  const deadline = steps[1].eventEndDate!;
 
   const form = useForm<z.infer<typeof taskSchema>>({
     resolver: zodResolver(taskSchema),

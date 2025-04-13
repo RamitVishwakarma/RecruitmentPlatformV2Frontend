@@ -5,9 +5,10 @@ import { Timer, ArrowLeft, Calendar, Clock, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { steps } from '@/constants/dashboard';
 
-const startTime = new Date('2025-04-14T00:00:00');
-const deadline = new Date('2025-04-16T12:59:59');
+const startTime = steps[1].eventStartDate!;
+const deadline = steps[1].eventEndDate!;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [now, setNow] = useState(new Date());

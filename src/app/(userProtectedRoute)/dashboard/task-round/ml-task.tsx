@@ -108,7 +108,7 @@ export const MachineLearningTask = ({ year, onSubmit, form, deadline }: MLTaskPr
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {new URL(task.link).origin}
+                      {new URL(task.link).href}
                     </Link>
                   </div>
                 )}
@@ -168,7 +168,7 @@ export const MachineLearningTask = ({ year, onSubmit, form, deadline }: MLTaskPr
         </React.Fragment>
       ))}
 
-      <div className="flex flex-col items-center justify-center py-6 sm:flex-row xl:pb-20 xl:pt-10">
+      <div className="flex flex-col items-center justify-center py-6 sm:flex-row xl:pt-10">
         <div className="h-[1px] rotate-180 bg-gradient-line sm:w-[447px]"></div>
         <div className="text-center text-lg font-medium tracking-[0.56px] text-[#100C2C] sm:text-2xl xl:h-[34px] xl:w-[328px]">
           Ready to Submit?
@@ -182,14 +182,30 @@ export const MachineLearningTask = ({ year, onSubmit, form, deadline }: MLTaskPr
           className="mx-auto flex w-full max-w-md flex-col items-center space-y-10 px-4 sm:px-0"
         >
           <div className="w-full px-0 xl:w-[550px]">
-            <FormInput
-              {...form.register('link')}
-              name="link"
-              type="url"
-              placeholder="Add Colab notebook link..."
-              className="w-full shadow-md"
-            />
+            <div className="w-full px-0 xl:w-[550px]">
+              <div className="space-y-2 text-center">
+                <h2 className="text-xl font-semibold">Submission Instructions</h2>
+                <p className="text-gray-700">
+                  Please upload your task details in a single document (if required). Make sure to
+                  include:
+                </p>
+                <ul className="list-inside list-disc text-left text-sm text-gray-600">
+                  <li>GitHub repo</li>
+                  <li>Jupyter Notebook (.ipynb) or Python script (.py)</li>
+                  <li>Include a README explaining your architecture and approach</li>
+                  <li>Any necessary explanations or justifications</li>
+                </ul>
+              </div>
+            </div>
           </div>
+
+          <FormInput
+            {...form.register('link')}
+            name="link"
+            type="url"
+            placeholder="Add Colab notebook link..."
+            className="w-full shadow-md"
+          />
           <Button
             type="submit"
             className="w-28 rounded-md bg-[#635BFF] px-10 py-5 text-base font-medium hover:bg-theme-interactive"
