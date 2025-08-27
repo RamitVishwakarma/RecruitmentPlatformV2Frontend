@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { type Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import WakeDb from '@/components/common/wake-db';
 import { Toaster } from '@/components/ui/toaster';
 
 const productSans = localFont({
@@ -36,6 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${productSans.variable}`}>
       <body className="font-product-sans antialiased">
+        <WakeDb />
         <Analytics />
         <SpeedInsights />
         <Toaster />
